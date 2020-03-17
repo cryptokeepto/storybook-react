@@ -9,12 +9,12 @@ export default {
 
 const tasks = [
   {
-    id: 1,
+    id: "1",
     title: "mike",
     state: "ok"
   },
   {
-    id: 2,
+    id: "2",
     title: "John",
     state: "bye"
   }
