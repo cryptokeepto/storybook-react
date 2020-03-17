@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Task from "./Task";
 
 function TaskList({ tasks, loading, actions }) {
@@ -51,5 +52,15 @@ function TaskList({ tasks, loading, actions }) {
     </div>
   );
 }
+
+TaskList.propTypes = {
+  loading: PropTypes.bool,
+  tasks: PropTypes.arrayOf(Task.propTypes.task)
+};
+
+TaskList.defaultProps = {
+  loading: false,
+  tasks: []
+};
 
 export default TaskList;
