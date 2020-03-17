@@ -32,16 +32,21 @@ function TaskList({ tasks, loading, actions }) {
         <div className="wrapper-message">
           <span className="icon-check" />
           <div className="title-message">You have no tasks</div>
-          <div className="subtitle message">Sit back and relax</div>
+          <div className="subtitle-message">Sit back and relax</div>
         </div>
       </div>
     );
   }
 
+  const tasksInOrder = [
+    ...tasks.filter(task => task.state === "TASK_PINNED"),
+    ...tasks.filter(task => task.state !== "TASK_PINNED")
+  ];
+
   return (
     <div className="list-items">
-      {tasks.map(task => (
-        <Task task={task} {...actions} />
+      {tasksInOrder.map(task => (
+        <Task key={task.id} task={task} {...actions} />
       ))}
     </div>
   );

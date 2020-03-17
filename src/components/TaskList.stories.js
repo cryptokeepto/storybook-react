@@ -35,4 +35,6 @@ export const Loading = () => <TaskList loading={true} />;
 
 export const Emply = () => <TaskList tasks={[]} />;
 
-export const WithPinnedTask = () => <TaskList tasks={withTaskPinned} />;
+export const WithPinnedTask = () => (
+  <TaskList tasks={withTaskPinned} actions={actionsData} />
+);
