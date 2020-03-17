@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList({ tasks, loading }) {
+function TaskList({ tasks, loading, actions }) {
   if (loading) {
     return <div className="list-items">loading</div>;
   }
@@ -13,7 +13,7 @@ function TaskList({ tasks, loading }) {
   return (
     <div className="list-items">
       {tasks.map(task => (
-        <Task task={task} />
+        <Task task={task} {...actions} />
       ))}
     </div>
   );
